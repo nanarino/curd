@@ -20,18 +20,23 @@
 
 # 安裝依賴
 pip install -r requirements.txt
-## 或者使用uv（試試套件咸更最新 若出問題了直接issue好吗🥰）
-uv lock --upgrade
+## 或者使用uv
 uv sync
+### 在這之前可以使全部套件更到最新 若出問題了直接issue
+# uv lock --upgrade
+
 
 # 配置好./config.ini后創建空白資料表
 # PS: $env:PYTHONPATH = "./"
 # SH: export PYTHONPATH=./
 python ./scripts/db_create.py
+## 或者使用uv
+uv run ./scripts/db_create.py
 
 # 運轉項目
 python app.py
-
+## 或者使用uv
+uv run app.py
 ```
 
 ## API demo
